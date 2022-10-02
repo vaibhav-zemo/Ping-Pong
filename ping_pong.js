@@ -15,23 +15,29 @@ var game = false;
     let rod = localStorage.getItem('ppname');
     let score = localStorage.getItem('ppscore');
 
-    if (rod=='null' || score == 'null') {
+    alert(`Press Enter to start new game            
+Press A to move in left 
+Press D to move in right`)
+    // alert("Press A to move in left ");
+    // alert("Press D to move in right ");
+
+    if (rod == 'null' || score == 'null') {
         alert("This is the first game ");
     }
-    else{
+    else {
         alert(rod + " has the maxscore of " + score);
     }
 })();
 
 function scoreboard(player, points) {
     let max = localStorage.getItem('ppscore');
-    if (points>max) {
+    if (points > max) {
         max = points;
-        localStorage.setItem('ppscore',points);
-        localStorage.setItem('ppname',player);
+        localStorage.setItem('ppscore', points);
+        localStorage.setItem('ppname', player);
     }
-    
-    alert(player + " has win the game with the score of " + points+ " : Max score is " + max);
+
+    alert(player + " has win the game with the score of " + points + " : Max score is " + max);
 };
 
 function resetboard(height) {
